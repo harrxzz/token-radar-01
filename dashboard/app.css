@@ -1,13 +1,13 @@
 /* Token Radar's plain theme. The five palette values, two radii and two families are the whole style;
    everything else is spacing, a hairline and a type step. */
 :root {
-  --canvas: #f2f5f3;
+  --canvas: #eef2f8;
   --surface: #ffffff;
-  --ink: #16211c;
-  --muted: #5f6f67;
-  --border: #d8e2dc;
-  --accent: #0f7a5a;
-  --negative: #b23b2e;
+  --ink: #172644;
+  --muted: #53647e;
+  --border: #d7dfeb;
+  --accent: #315db7;
+  --negative: #a54055;
   --radius-control: 8px;
   --radius-panel: 14px;
   --font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -137,3 +137,27 @@ tbody tr[data-selected="true"] { background: color-mix(in srgb, var(--accent) 8%
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
 }
+
+/* A research terminal: a cobalt masthead, restrained data surface and one strong hierarchy. */
+body { background: #eef2f8; }
+.shell { max-width: 1440px; }
+.top { align-items: center; border: 0; background: #172b52; color: #fff; margin: -24px -32px 0; padding: 20px 32px; }
+.top .brand-name { color: #fff; font: 700 17px/1.2 var(--font-body); letter-spacing: -.02em; }
+.top-meta { color: #d2dff4; }
+.mark { width: 14px; height: 14px; background: #86b5ff; box-shadow: 0 0 0 5px #31517e; }
+.lede { padding-top: 36px; }
+h1 { font-size: clamp(27px, 3vw, 40px); letter-spacing: -.04em; max-width: 23ch; }
+.facts { border-left: 3px solid #7198dd; }
+.fact { padding: 3px 0; }
+.fact b { font-weight: 700; color: #263f6d; }
+.controls { background: #e2e9f4; border: 0; padding: 16px; border-radius: 10px 10px 0 0; }
+.field input, .field select { min-width: 150px; }
+.field input { min-width: 230px; }
+.panel { border-radius: 0 0 10px 10px; }
+.table-wrap { max-height: 680px; }
+thead { position: sticky; top: 0; z-index: 1; background: #f6f8fc; }
+caption { padding: 13px 16px; text-align: left; background: white; }
+tbody tr:hover { background: #f3f7ff; }
+.model { border-radius: 10px; }
+.detail { border: 0; border-left: 1px solid var(--border); max-width: 100%; }
+@media(max-width:900px) { .top { margin: -16px -16px 0; padding: 18px 16px; } .top-meta { display: none; } .field { flex: 1 1 150px; } .field input, .field select { width: 100%; min-width: 0; } .facts { border-left: 0; } }
